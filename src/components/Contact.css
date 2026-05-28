@@ -1,0 +1,296 @@
+/* ── Contact Section ──────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+.contact-section {
+  background: #0a0a0f;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background grid ── */
+.contact-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* ── Glow orbs ── */
+.contact-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  opacity: 0.18;
+}
+
+.contact-glow--left {
+  background: #6366f1;
+  top: -100px;
+  left: -200px;
+}
+
+.contact-glow--right {
+  background: #06b6d4;
+  bottom: -100px;
+  right: -200px;
+}
+
+/* ── Inner container ── */
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Eyebrow ── */
+.contact-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0 0 16px;
+  animation: fadeUp 0.6s ease both;
+}
+
+/* ── Heading ── */
+.contact-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 20px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f0f0ff 20%, #818cf8 60%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+/* ── Tagline ── */
+.contact-tagline {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #6b7280;
+  line-height: 1.75;
+  margin: 0 0 52px;
+  font-weight: 300;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.contact-tagline span {
+  color: #a5b4fc;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Cards ── */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.contact-card {
+  position: relative;
+  background: #0f0f1a;
+  border: 1px solid #1e1e30;
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-card--linkedin:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+.contact-card--gmail:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15), 0 0 0 1px rgba(6, 182, 212, 0.2);
+}
+
+/* Shine sweep on hover */
+.contact-card-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.contact-card:hover .contact-card-shine {
+  transform: translateX(100%);
+}
+
+/* ── Card icon ── */
+.contact-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-card--linkedin .contact-card-icon {
+  background: rgba(99, 102, 241, 0.12);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.contact-card--gmail .contact-card-icon {
+  background: rgba(6, 182, 212, 0.1);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* ── Card body ── */
+.contact-card-body {
+  flex: 1;
+}
+
+.contact-card-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.contact-card--linkedin .contact-card-label { color: #6366f1; }
+.contact-card--gmail    .contact-card-label { color: #06b6d4; }
+
+.contact-card-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e2e2f0;
+  margin: 0 0 6px;
+}
+
+.contact-card-hint {
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.contact-card:hover .contact-card-hint {
+  color: #6b7280;
+}
+
+/* ── Arrow icon ── */
+.contact-card-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 1.1rem;
+  color: #2a2a40;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.contact-card--linkedin:hover .contact-card-arrow {
+  color: #818cf8;
+  transform: translate(2px, -2px);
+}
+
+.contact-card--gmail:hover .contact-card-arrow {
+  color: #22d3ee;
+}
+
+.contact-card-arrow--copied {
+  color: #4ade80 !important;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ── Footer strip ── */
+.contact-footer-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.contact-footer-strip p {
+  font-size: 0.82rem;
+  color: #374151;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.contact-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1f2937;
+  flex-shrink: 0;
+}
+
+/* ── Animation ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-heading {
+    font-size: 2.4rem;
+  }
+
+  .contact-tagline br {
+    display: none;
+  }
+}

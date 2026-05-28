@@ -1,0 +1,204 @@
+/* Skills.css */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+#skills {
+  background: #0a0a0f;
+  padding: 100px 24px;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background grid (same as Hero/Projects) */
+#skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+}
+
+/* Glow effect */
+#skills::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+  bottom: -150px;
+  right: -100px;
+  pointer-events: none;
+}
+
+/* Container */
+.skills-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.skills-heading-wrap {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.skills-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0 0 12px;
+}
+
+.skills-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  background: linear-gradient(135deg, #f0f0ff 30%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skills-heading-bar {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* Grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Skill card */
+.skill-card {
+  background: #0f0f1a;
+  border: 1px solid #1e1e30;
+  border-radius: 20px;
+  padding: 24px 22px 26px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99,102,241,0.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.08);
+}
+
+/* Subtle glow on hover (same as project cards) */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--card-accent, #6366f1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover::after {
+  opacity: 0.06;
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #12121e;
+  padding-bottom: 14px;
+}
+
+.card-header span {
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #e2e2f0;
+  letter-spacing: -0.02em;
+}
+
+/* Chips container */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Individual skill chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #12121e;
+  border: 1px solid #1e1e30;
+  border-radius: 40px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.chip span {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.chip:hover {
+  border-color: var(--chip-color, #6366f1);
+  color: var(--chip-color, #a5b4fc);
+  transform: translateY(-2px);
+  background: rgba(99,102,241,0.05);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card {
+    padding: 20px 18px 22px;
+  }
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills {
+    padding: 70px 20px;
+  }
+  .chip {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+}
