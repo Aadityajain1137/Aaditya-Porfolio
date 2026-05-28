@@ -59,17 +59,6 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
-  // Scroll to contact section when Hire Me is clicked
-  const handleHireMe = (e) => {
-    e.preventDefault();
-    const contactSection = document.querySelector("#contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-      setActiveLink("contact");
-      setMenuOpen(false);
-    }
-  };
-
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar-inner">
@@ -94,11 +83,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* CTA - Hire Me button now scrolls to Contact */}
-        <button onClick={handleHireMe} className="navbar-cta">
-          Hire Me
-        </button>
 
         {/* Hamburger */}
         <button
@@ -126,10 +110,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        {/* Mobile Hire Me button also scrolls to Contact */}
-        <button onClick={handleHireMe} className="navbar-cta navbar-cta--mobile">
-          Hire Me
-        </button>
       </div>
     </nav>
   );

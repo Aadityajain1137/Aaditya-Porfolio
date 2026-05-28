@@ -250,6 +250,10 @@
   transition: all 0.2s ease;
 }
 
+.hero-social svg {
+  display: block;
+}
+
 .hero-social:hover {
   background: #6366f1;
   border-color: #6366f1;
@@ -262,6 +266,13 @@
   background: #f59e0b;
   border-color: #f59e0b;
   box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+}
+
+/* Codolio (owl) hover effect */
+.hero-social--codolio:hover {
+  background: #14b8a6;
+  border-color: #14b8a6;
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
 }
 
 .hero-social-line {
@@ -278,7 +289,7 @@
   text-transform: uppercase;
 }
 
-/* ── Scroll indicator ── */
+/* ── Scroll indicator (optional) ── */
 .hero-scroll {
   position: absolute;
   bottom: 32px;
@@ -349,7 +360,7 @@
     justify-content: center;
   }
 }
-/* ── Extra mobile responsiveness ── */
+
 @media (max-width: 600px) {
   .hero {
     padding: 80px 20px 60px;

@@ -79,6 +79,40 @@ export default function Hero() {
           >
             <SiLeetcode />
           </a>
+          {/* Codolio – owl icon */}
+          <a
+            href="https://codolio.com/profile/AadityaJain1137"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-social hero-social--codolio"
+            aria-label="Codolio"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Owl head */}
+              <circle cx="12" cy="10" r="5" />
+              {/* Ear tufts */}
+              <path d="M9 6 L7 2" />
+              <path d="M15 6 L17 2" />
+              {/* Eyes */}
+              <circle cx="10" cy="9" r="1.2" fill="currentColor" stroke="none" />
+              <circle cx="14" cy="9" r="1.2" fill="currentColor" stroke="none" />
+              {/* Beak */}
+              <path d="M12 11 L12 13" strokeWidth="1.5" />
+              {/* Wing hints */}
+              <path d="M6 13 L3 16" />
+              <path d="M18 13 L21 16" />
+            </svg>
+          </a>
           <span className="hero-social-line" aria-hidden="true" />
           <span className="hero-social-label">Find me on</span>
         </div>
