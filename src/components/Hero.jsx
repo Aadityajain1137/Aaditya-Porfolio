@@ -62,7 +62,7 @@ export default function Hero() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/"
+            href="hhttps://github.com/Aadityajain1137"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-social"
